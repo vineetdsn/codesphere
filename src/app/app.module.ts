@@ -11,6 +11,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { TodoComponent } from './todo/todo.component';
 import { DateFormatDirective } from './customDirectives/date-format.directive';
 import { AmtseparatorPipe } from './customPipes/amtseparator.pipe';
+import { BindingDataComponent } from './binding-data/binding-data.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AmtseparatorPipe } from './customPipes/amtseparator.pipe';
     TodoComponent,
     AmtseparatorPipe,
     DateFormatDirective,
+    BindingDataComponent,
   ],
   imports: [
     BrowserModule,
