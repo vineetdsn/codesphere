@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './registration/registration.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TodoComponent } from './todo/todo.component';
+import { DateFormatDirective } from './customDirectives/date-format.directive';
+import { AmtseparatorPipe } from './customPipes/amtseparator.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { TodoComponent } from './todo/todo.component';
     RegisterComponent,
     WeatherComponent,
     TodoComponent,
+    AmtseparatorPipe,
+    DateFormatDirective,
   ],
   imports: [
     BrowserModule,

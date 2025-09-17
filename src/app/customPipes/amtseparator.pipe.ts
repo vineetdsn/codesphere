@@ -7,8 +7,9 @@ export class AmtseparatorPipe implements PipeTransform {
 
   transform(value: number | string): string {
     let num = value + '';
+    console.log("hi")
 
-    return num.replace();
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
   }
 
 }
