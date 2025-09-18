@@ -1,5 +1,28 @@
 <div class="game-container">
-    <h2 class="heading">Games</h2>
-    <p>Name: {{gameName}}</p>
-    <p>Genre: {{gameGenre}}</p>
+  <div class="cards">
+    <h2 class="heading">String InterPolation</h2>
+    <p>Name: {{ gameName }}</p>
+    <p>Genre: {{ gameGenre }}</p>
+  </div>
+  <div class="cards">
+    <h2 class="heading">Property Binding</h2>
+    <button [disabled]="isDisabled">Click Me</button>
+    <p>Genre: {{ gameGenre }}</p>
+  </div>
+  <div class="cards">
+    <h2 class="heading">Event Binding</h2>
+    <input [value]="gameName" (input)="onGameNameChange($event)" placeholder="Enter game name">
+   <button (click)="addGame()" [disabled]="isDisabled">Add Game</button>
+
+<ul>
+  <li *ngFor="let game of gameList">
+    {{ game.name }} - {{ game.genre }} -  {{ game.code }}
+  </li>
+</ul>
+  </div>
+  <!-- <div class="cards">
+    <h2 class="heading">Two way Binding</h2>
+    <input type="text" [(ngModel)]="gameName" placeholder="Enter the Game Name">
+    <p>Game Code: {{ gameCode }}</p>
+  </div> -->
 </div>
