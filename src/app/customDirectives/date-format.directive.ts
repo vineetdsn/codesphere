@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appDateFormat]'
+  selector: '[DateFormat]'
 })
 export class DateFormatDirective {
 
