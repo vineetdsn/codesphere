@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import fields from '../jsonData/config.json';  
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -8,16 +8,21 @@ import fields from '../jsonData/config.json';
 })
 export class DynamicFormComponent implements OnInit {
   form!: FormGroup;
-  fields: any = fields;
+  fields: any[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
-    let group: any = {};
-    this.fields.forEach((field: any) => {
-      group[field.name] = [''];
+    this.http.get<any[]>('/assets/config.json').subscribe(data => {
+      this.fields = data;
+
+      let group: any = {};
+      this.fields.forEach(field => {
+        group[field.name] = [''];   
+      });
+
+      this.form = this.fb.group(group);
     });
-    this.form = this.fb.group(group);
   }
 
   onSubmit() {
