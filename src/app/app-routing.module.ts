@@ -6,6 +6,7 @@ import { RegisterComponent } from './registration/registration.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TodoComponent } from './todo/todo.component';
 import { BindingDataComponent } from './binding-data/binding-data.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'binding', component: BindingDataComponent},
+  { path: 'form', component: DynamicFormComponent},
   // any unknown paths redirect to home
   { path: '**', redirectTo: '' },
 ];

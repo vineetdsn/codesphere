@@ -8,24 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class BindingDataComponent implements OnInit {
   gameName = "";
   gameGenre = "";
+  gameConsole: string[] = [];
   gameCode: number | null = null;
   isDisabled = false;
   gameList: { name: string; genre: string; code: number | null }[] = [];
-
-
-  // Property Binding
-
-  // Event Binding
-  // Two way Binding
-
 
   constructor() { 
  }
 
   ngOnInit(): void {
   }
+
+  
 onGameNameChange(event: any) {
-    this.gameName = event.target.value;
+    this.gameConsole = event.target.value;
   }
   
   addGame(){
@@ -35,6 +31,10 @@ onGameNameChange(event: any) {
       code: this.gameCode,
     }
     this.gameList.push(newGame)
+  }
+
+  addConsole (event: any){
+    this.gameConsole.push(event.target.value);
   }
 
 }

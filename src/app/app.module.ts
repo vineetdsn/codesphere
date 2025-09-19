@@ -12,6 +12,7 @@ import { TodoComponent } from './todo/todo.component';
 import { DateFormatDirective } from './customDirectives/date-format.directive';
 import { AmtseparatorPipe } from './customPipes/amtseparator.pipe';
 import { BindingDataComponent } from './binding-data/binding-data.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BindingDataComponent } from './binding-data/binding-data.component';
     AmtseparatorPipe,
     DateFormatDirective,
     BindingDataComponent,
+    DynamicFormComponent,
   ],
   imports: [
     BrowserModule,

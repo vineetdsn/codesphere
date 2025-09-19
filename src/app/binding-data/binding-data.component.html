@@ -1,28 +1,39 @@
 <div class="game-container">
   <div class="cards">
     <h2 class="heading">String InterPolation</h2>
-    <p>Name: {{ gameName }}</p>
-    <p>Genre: {{ gameGenre }}</p>
+    <p>Current Game Name: {{ gameName }}</p>
+    <!-- <p>Genre: {{ gameGenre }}</p> -->
   </div>
+
   <div class="cards">
     <h2 class="heading">Property Binding</h2>
     <button [disabled]="isDisabled">Click Me</button>
-    <p>Genre: {{ gameGenre }}</p>
+    <p>Event binding s used in the button disable and enable</p>
   </div>
+
   <div class="cards">
     <h2 class="heading">Event Binding</h2>
-    <input [value]="gameName" (input)="onGameNameChange($event)" placeholder="Enter game name">
-   <button (click)="addGame()" [disabled]="isDisabled">Add Game</button>
-
+    <input [value]="gameConsole" (input)="onGameNameChange($event)" placeholder="Add Console">
+   <button (click)="addConsole($event)" [disabled]="isDisabled">Add Console</button>
+    <p>Console: {{gameConsole}}</p>
+    <ul>
+  <li *ngFor="let console of gameConsole">
+    {{ console }}
+  </li>
+</ul>
+  </div>
+  
+  <div class="cards">
+    <h2 class="heading">Two way Binding</h2>
+    <input type="text" [(ngModel)]="gameName" placeholder="Add Game">
+    <input type="text" [(ngModel)]="gameGenre" placeholder="Add Genre">
+    <input type="text" [(ngModel)]="gameCode" placeholder="Add Code">
+    
+   <button (click)="addGame()" [disabled]="isDisabled">Add Genre</button>
 <ul>
   <li *ngFor="let game of gameList">
     {{ game.name }} - {{ game.genre }} -  {{ game.code }}
   </li>
 </ul>
   </div>
-  <!-- <div class="cards">
-    <h2 class="heading">Two way Binding</h2>
-    <input type="text" [(ngModel)]="gameName" placeholder="Enter the Game Name">
-    <p>Game Code: {{ gameCode }}</p>
-  </div> -->
 </div>
