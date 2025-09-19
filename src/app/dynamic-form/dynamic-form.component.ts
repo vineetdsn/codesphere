@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dynamic-form',
-  templateUrl: './dynamic-form.component.html'
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.css']
 })
 export class DynamicFormComponent implements OnInit {
   form!: FormGroup;
